@@ -101,7 +101,7 @@
 
       // format as price
       function price_format(str, ignore) {
-        if (!ignore && (str === '' || str == price_format('0', true)) && clearOnEmpty)
+        if (!ignore && str === '' && clearOnEmpty)
           return '';
 
         // formatting settings
@@ -222,8 +222,8 @@
         var str = get();
         var price = price_format(str);
         if (str != price) set(price);
-        var format = price_format('0', true);
-        if (price == format && str != '0' && clearOnEmpty) set('');
+        //var format = price_format('0', true);
+        //if (price == format && str != '0' && clearOnEmpty) set('');
       }
 
       // Add prefix on focus
